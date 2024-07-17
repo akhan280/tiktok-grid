@@ -16,18 +16,31 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* styles/ImageGrid.module.css */
+.button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gridItem {
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
